@@ -1,0 +1,43 @@
+run:
+  folder_name: 'semseg-guided-diffusion' # base name
+  special_name: 'v1'      # more specific name for the current run - e.g. some unique hyperparam setups
+
+model:
+  attention: True 
+  checkpoint_path: '' #full path ot None
+  hidden_dim: 128
+  emb_dim: 256
+  num_classes: 19 # for BDD it is 19
+
+dataset:
+  image_size: 128
+  image_folder_path: '' #full path
+  semseg_folder_path: '' #full path 
+  colormap_path: '' #full path 
+  test_mask_path: '' #full path # on wandb, this will be the logged test image
+  test_folder: '' #full path  # during inference put all masks in this folder
+
+training:
+  test_sample_num: 8 # how many images to generate for 1 mask
+  gpus: [0]
+
+  batch_size: 50
+  epochs: 1401
+  lr: 0.0003
+  ema: true
+  log_freq: 50
+  min_log_epoch: 450
+  save_freq: 50
+  wandb_mode: 'online'
+  wandb_project: 'Project_name'
+
+algo:
+  noise_steps: 1000
+  cfg_scale: 3
+
+paths:
+  log_dir: ${run_name}/logs
+  img_dir: ${run_name}/images
+  ckpt_dir: ${run_name}/checkpoints
+
+run_name: ${run.folder_name}_${dataset.image_size}_${run.special_name}
