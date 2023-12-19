@@ -1,5 +1,7 @@
 # semseg-guided-diffusion
 
+ ![semseg-guided-diffusion-fig](./semseg-guided-diffusion-fig.png)
+
 Train and test semantic segmentation guided diffusion models.
 
 You will need to install:  **pytorch-lightning, torchvision, hydra, wandb, omegaconf** (and **skimage** for BDD preprocessing)\
