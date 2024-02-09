@@ -1,5 +1,7 @@
 # semseg-guided-diffusion
 
+See corresponding [paper](WINS2_paper_17.pdf) accepted for [2nd Workshop on Intelligent Infocommunication Networks, Systems and Services (WINS 2024)](https://www.tmit.bme.hu/WINS_2024).
+
  ![semseg-guided-diffusion-fig](./semseg-guided-diffusion-fig.png)
 
 Train and test semantic segmentation guided diffusion models.
